@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url('https://wallpapercave.com/wp/wp7597793.jpg');
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+}
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    color:yellow;
+    position:relative; 
+    left:570px; 
+    top:8px;
+    padding: 15px;
+    
+}
+p{
+    text-align: center;
+    text-transform: capitalize;
+    font-size: large;
+    color:yellow;
+    position:relative; 
+    left:40px; 
+    top:60px;
+    padding: 30px;
+    
+    
+
+}
+
+.slider{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    left: -530px;
+    transform-style: preserve-3d;
+    animation: rotate 30s linear infinite;
+    cursor: pointer;
+    
+}
+
+@keyframes rotate {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+.slider span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)*45deg)) translateZ(280px);
+    
+}
+
+.slider span img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    object-fit: cover;
+    transition: 2s;
+    top: 290px;
+    border: 2px solid yellow;
+
+}
+
+.slider span:hover img {
+    transform: translateY(-50px) scale(1.2);
+}
